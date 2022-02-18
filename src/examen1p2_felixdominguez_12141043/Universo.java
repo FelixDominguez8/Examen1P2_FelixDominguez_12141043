@@ -9,6 +9,6 @@ package examen1p2_felixdominguez_12141043;
  *
  * @author Lenovo I7
  */
-public class Alien extends Extraterrestre{
+public class Universo {
     
 }

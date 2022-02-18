@@ -9,6 +9,15 @@ package examen1p2_felixdominguez_12141043;
  *
  * @author Lenovo I7
  */
-public class Extraterrestre {
+public class Extraterrestre extends Persona{
+
+    public Extraterrestre(String nombre, String poder, String debilidad, String heroeovillano, int fuerza, int habilidadfisica, int habilidadmental, boolean tieneescuadron) {
+        super(nombre, poder, debilidad, heroeovillano, fuerza, habilidadfisica, habilidadmental, tieneescuadron);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
     
 }

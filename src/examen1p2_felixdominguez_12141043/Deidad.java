@@ -9,6 +9,9 @@ package examen1p2_felixdominguez_12141043;
  *
  * @author Lenovo I7
  */
-public class Deidad {
+public class Deidad extends Extraterrestre{
+    private boolean creyentes;
+    private String religion;
+    
     
 }
