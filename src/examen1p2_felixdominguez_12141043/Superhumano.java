@@ -12,6 +12,10 @@ package examen1p2_felixdominguez_12141043;
 public class Superhumano extends Persona{
     private String superpoder;
 
+    public Superhumano() {
+        
+    }
+
     public Superhumano(String superpoder, String nombre, String poder, String debilidad, String heroeovillano, int fuerza, int habilidadfisica, int habilidadmental, boolean tieneescuadron) {
         super(nombre, poder, debilidad, heroeovillano, fuerza, habilidadfisica, habilidadmental, tieneescuadron);
         this.superpoder = superpoder;

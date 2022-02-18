@@ -11,6 +11,10 @@ package examen1p2_felixdominguez_12141043;
  */
 public class PersonaNormal extends Persona{
 
+    public PersonaNormal() {
+        
+    }
+    
     public PersonaNormal(String nombre, String poder, String debilidad, String heroeovillano, int fuerza, int habilidadfisica, int habilidadmental, boolean tieneescuadron) {
         super(nombre, poder, debilidad, heroeovillano, fuerza, habilidadfisica, habilidadmental, tieneescuadron);
     }

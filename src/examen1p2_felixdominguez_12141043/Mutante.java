@@ -14,6 +14,10 @@ import java.util.ArrayList;
 public class Mutante extends Persona{
     ArrayList<String> factoresmutantes=new ArrayList();
 
+    public Mutante() {
+        
+    }
+
     public Mutante(ArrayList<String> factoresmutantes, String nombre, String poder, String debilidad, String heroeovillano, int fuerza, int habilidadfisica, int habilidadmental, boolean tieneescuadron) {
         super(nombre, poder, debilidad, heroeovillano, fuerza, habilidadfisica, habilidadmental, tieneescuadron);
         this.factoresmutantes = factoresmutantes;

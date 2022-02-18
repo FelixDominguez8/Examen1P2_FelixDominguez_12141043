@@ -13,6 +13,10 @@ public class PorAccidenteRadioactivo extends Persona{
     private int edadaccidente;
     private String tipoaccidente;
 
+    public PorAccidenteRadioactivo() {
+        
+    }
+
     public PorAccidenteRadioactivo(int edadaccidente, String tipoaccidente, String nombre, String poder, String debilidad, String heroeovillano, int fuerza, int habilidadfisica, int habilidadmental, boolean tieneescuadron) {
         super(nombre, poder, debilidad, heroeovillano, fuerza, habilidadfisica, habilidadmental, tieneescuadron);
         this.edadaccidente = edadaccidente;
