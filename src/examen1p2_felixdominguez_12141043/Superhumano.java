@@ -31,7 +31,7 @@ public class Superhumano extends Persona{
     
     @Override
     public void FinalChance(Persona p1, Persona p2){
-        
+        super.setHabilidadfisica(super.getHabilidadfisica()*4);
     }
 
     @Override

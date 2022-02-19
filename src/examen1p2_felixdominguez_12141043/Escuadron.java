@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Lenovo I7
  */
 public class Escuadron {
-    private String planeta;
+    private String nombre;
     private String lugarbase;
     private Persona lider;
     private boolean heroeovillano;
@@ -22,27 +22,27 @@ public class Escuadron {
         
     }
 
-    public Escuadron(String planeta, String lugarbase, Persona lider, boolean heroeovillano) {
-        this.planeta = planeta;
+    public Escuadron(String nombre, String lugarbase, Persona lider, boolean heroeovillano) {
+        this.nombre = nombre;
         this.lugarbase = lugarbase;
         this.lider = lider;
         this.heroeovillano = heroeovillano;
     }
 
     public Escuadron(String planeta, String lugarbase, Persona lider, boolean heroeovillano, ArrayList<Persona> miembros) {
-        this.planeta = planeta;
+        this.nombre = planeta;
         this.lugarbase = lugarbase;
         this.lider = lider;
         this.heroeovillano = heroeovillano;
         this.miembros = miembros;
     }
 
-    public String getPlaneta() {
-        return planeta;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setPlaneta(String planeta) {
-        this.planeta = planeta;
+    public void setNombre(String planeta) {
+        this.nombre = planeta;
     }
 
     public String getLugarbase() {
@@ -79,7 +79,7 @@ public class Escuadron {
 
     @Override
     public String toString() {
-        return "planeta=" + planeta + ", lugarbase=" + lugarbase + ", lider=" + lider + ", heroeovillano=" + heroeovillano + ", miembros=" + miembros;
+        return "nombre=" + nombre + ", lugarbase=" + lugarbase + ", lider=" + lider + ", heroeovillano=" + heroeovillano + ", miembros=" + miembros;
     }
     
 }

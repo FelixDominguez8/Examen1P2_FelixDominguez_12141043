@@ -21,7 +21,7 @@ public class PersonaNormal extends Persona{
     
     @Override
     public void FinalChance(Persona p1, Persona p2){
-        
+        super.setHabilidadfisica(super.getHabilidadfisica()*3);
     }
 
     @Override

@@ -102,6 +102,71 @@ public class Examen1P2_FelixDominguez_12141043 {
                     System.out.println("Ingrese la opcion que desea: ");
                     int opcion2=lea.nextInt();
                     System.out.println("");
+                    switch(opcion2){
+                        case 1:{
+                            System.out.println("Ingrese el nombre del escuadron: ");
+                            lea.nextLine();
+                            String nombre=lea.nextLine();
+                            System.out.println("Ingrese la ubicacion de su base: ");
+                            String lugar=lea.nextLine();
+                            System.out.println("Ingrese la posicion de la persona que sera el lider del grupo: ");
+                            int pos=lea.nextInt();
+                            System.out.println("Ingrese si es de heroes (true) o de villanos (false)");
+                            boolean tipo=lea.nextBoolean();
+                            escuadrones.add(new Escuadron(nombre,lugar,personas.get(pos),tipo));
+                            break;
+                        }
+                        case 2:{
+                            System.out.println("Ingrese la posicion del escuadron a modificar: ");
+                            int pos=lea.nextInt();
+                            System.out.println("1) Nombre");
+                            System.out.println("2) Ubicacion de la base");
+                            System.out.println("3) Lider");
+                            System.out.println("4) Heroes o Villanos");
+                            System.out.println("Ingrese la opcion que desea modificar: ");
+                            int op=lea.nextInt();
+                            switch(op){
+                                case 1:{
+                                    System.out.println("Ingrese el nuevo nombre del escuadron: ");
+                                    lea.nextLine();
+                                    String nombre=lea.nextLine();
+                                    escuadrones.get(pos).setNombre(nombre);
+                                }
+                                case 2:{
+                                    System.out.println("Ingrese la ubicacion de su base: ");
+                                    lea.nextLine();
+                                    String lugar=lea.nextLine();
+                                    escuadrones.get(pos).setLugarbase(lugar);
+                                }
+                                case 3:{
+                                    System.out.println("Ingrese la posicion de la persona que sera el lider del grupo: ");
+                                    int posl=lea.nextInt();
+                                    escuadrones.get(pos).setLider(personas.get(posl));
+                                }
+                                case 4:{
+                                    System.out.println("Ingrese si es de heroes (true) o de villanos (false)");
+                                    boolean tipo=lea.nextBoolean();
+                                    escuadrones.get(0).setHeroeovillano(tipo);
+                                }
+                            }
+                            break;
+                        }
+                        case 3:{
+                            break;
+                        }
+                        case 4:{
+                            break;
+                        }
+                        case 5:{
+                            break;
+                        }
+                        case 6:{
+                            break;
+                        }
+                        case 7:{
+                            break;
+                        }
+                    }
                     break;
                 }
                 case 3:{
