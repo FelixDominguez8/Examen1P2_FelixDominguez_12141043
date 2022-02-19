@@ -22,6 +22,7 @@ public class Examen1P2_FelixDominguez_12141043 {
         ArrayList<Escuadron> escuadrones=new ArrayList();
         ArrayList<Persona> heroes=new ArrayList();
         ArrayList<Persona> villanos=new ArrayList();
+        ArrayList<Persona> personas=new ArrayList();
         char resp='s';
         while(resp=='s'){
             System.out.println("");
@@ -113,17 +114,17 @@ public class Examen1P2_FelixDominguez_12141043 {
                     System.out.println("Ingrese la opcion que desea: ");
                     int opcion2=lea.nextInt();
                     System.out.println("");
-                    System.out.println("1) Persona normal");
-                    System.out.println("2) Mutante");
-                    System.out.println("3) Persona con accidente radioactivo");
-                    System.out.println("4) Superhumano");
-                    System.out.println("5) Deidad");
-                    System.out.println("6) Alien");
-                    System.out.println("Escoja el tipo de Persona: ");
-                    int tipo=lea.nextInt();
-                    System.out.println("");
                     switch(opcion2){
                         case 1:{
+                            System.out.println("1) Persona normal");
+                            System.out.println("2) Mutante");
+                            System.out.println("3) Persona con accidente radioactivo");
+                            System.out.println("4) Superhumano");
+                            System.out.println("5) Deidad");
+                            System.out.println("6) Alien");
+                            System.out.println("Escoja el tipo de Persona: ");
+                            int tipo=lea.nextInt();
+                            System.out.println("");
                             System.out.println("Ingrese el nombre de la persona: ");
                             lea.nextLine();
                             String nombre=lea.nextLine();
@@ -148,6 +149,7 @@ public class Examen1P2_FelixDominguez_12141043 {
                                     }else if(heroeovillano.equals("villano")){
                                         villanos.add(new PersonaNormal(nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     }
+                                    personas.add(new PersonaNormal(nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     break;
                                 }
                                 case 2:{
@@ -166,6 +168,7 @@ public class Examen1P2_FelixDominguez_12141043 {
                                     }else if(heroeovillano.equals("villano")){
                                         villanos.add(new Mutante(factores,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     }
+                                    personas.add(new Mutante(factores,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     break;
                                 }
                                 case 3:{
@@ -179,36 +182,167 @@ public class Examen1P2_FelixDominguez_12141043 {
                                     }else if(heroeovillano.equals("villano")){
                                         villanos.add(new PorAccidenteRadioactivo(edad,tipoaccidente,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     }
+                                    personas.add(new PorAccidenteRadioactivo(edad,tipoaccidente,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     break;
                                 }
                                 case 4:{
+                                    System.out.println("Ingrese el superpoder del superhumano: ");
+                                    lea.nextLine();
+                                    String superpoder=lea.nextLine();
                                     if(heroeovillano.equals("heroe")){
-                                        heroes.add(new PersonaNormal(nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
+                                        heroes.add(new Superhumano(superpoder,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     }else if(heroeovillano.equals("villano")){
-                                        villanos.add(new PersonaNormal(nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
+                                        villanos.add(new Superhumano(superpoder,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     }
+                                    personas.add(new Superhumano(superpoder,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     break;
                                 }
                                 case 5:{
+                                    System.out.println("¿Hay creyentes de esta deidad? true/false");
+                                    boolean creyentes=lea.nextBoolean();
+                                    System.out.println("¿Cual es el nombre de la religion o mythologia a la cual pertenece?: ");
+                                    String nomre=lea.nextLine();
                                     if(heroeovillano.equals("heroe")){
-                                        heroes.add(new PersonaNormal(nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
+                                        heroes.add(new Deidad(creyentes,nomre,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     }else if(heroeovillano.equals("villano")){
-                                        villanos.add(new PersonaNormal(nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
+                                        villanos.add(new Deidad(creyentes,nomre,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     }
+                                    personas.add(new Deidad(creyentes,nomre,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     break;
                                 }
                                 case 6:{
+                                    System.out.println("Ingrese el planeta al cual pertenece: ");
+                                    lea.nextLine();
+                                    String planeta=lea.nextLine();
                                     if(heroeovillano.equals("heroe")){
-                                        heroes.add(new PersonaNormal(nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
+                                        heroes.add(new Alien(planeta,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     }else if(heroeovillano.equals("villano")){
-                                        villanos.add(new PersonaNormal(nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
+                                        villanos.add(new Alien(planeta,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     }
+                                    personas.add(new Alien(planeta,nombre,poder,debilidad,heroeovillano,fuerza,fisica,mental,tiene));
                                     break;
                                 }
                             }
                             break;
                         }
                         case 2:{
+                            System.out.println("Ingrese la posicion de la persona a modificar: ");
+                            int pos=lea.nextInt();
+                            System.out.println("1) Persona normal");
+                            System.out.println("2) Mutante");
+                            System.out.println("3) Persona con accidente radioactivo");
+                            System.out.println("4) Superhumano");
+                            System.out.println("5) Deidad");
+                            System.out.println("6) Alien");
+                            System.out.println("Escoja el tipo de Persona: ");
+                            int tipo=lea.nextInt();
+                            System.out.println("");
+                            System.out.println("1) Nombre");
+                            System.out.println("2) Poder");
+                            System.out.println("3) Debilidad");
+                            System.out.println("4) Es heroe o villano");
+                            System.out.println("5) Fuerza");
+                            System.out.println("6) Habilidad fisica");
+                            System.out.println("7) Habilidad mental");
+                            System.out.println("8) Tiene escuadron o no");
+                            System.out.println("9) Otro");
+                            int mod=lea.nextInt();
+                            switch(mod){
+                                case 1:{
+                                    System.out.println("Ingrese el nuevo nombre de la persona: ");
+                                    lea.nextLine();
+                                    String nombre=lea.nextLine();
+                                    personas.get(pos).setNombre(nombre);
+                                    break;
+                                }
+                                case 2:{
+                                    System.out.println("Ingrese el nuevo poder: ");
+                                    lea.nextLine();
+                                    String poder=lea.nextLine();
+                                    personas.get(pos).setPoder(poder);
+                                    break;
+                                }
+                                case 3:{
+                                    System.out.println("Ingrese la nueva debilidad: ");
+                                    lea.nextLine();
+                                    String debilidad=lea.nextLine();
+                                    personas.get(pos).setDebilidad(debilidad);
+                                    break;
+                                }
+                                case 4:{
+                                    System.out.println("Ingrese el nuevo tipo heroe/villano: ");
+                                    lea.nextLine();
+                                    String ti=lea.nextLine();
+                                    personas.get(pos).setHeroeovillano(ti);
+                                    break;
+                                }
+                                case 5:{
+                                    System.out.println("Ingrese la nueva fuerza: ");
+                                    int fuerza=lea.nextInt();
+                                    personas.get(pos).setFuerza(fuerza);
+                                    break;
+                                }
+                                case 6:{
+                                    System.out.println("Ingrese la nueva habilidad fisica: ");
+                                    int fisica=lea.nextInt();
+                                    personas.get(pos).setHabilidadfisica(fisica);
+                                    break;
+                                }
+                                case 7:{
+                                    System.out.println("Ingrese la nueva habilidad mental: ");
+                                    int mental=lea.nextInt();
+                                    personas.get(pos).setHabilidadmental(mental);
+                                    break;
+                                }
+                                case 8:{
+                                    System.out.println("Ingrese si tiene un escuadron o no (true/false): ");
+                                    boolean tiene=lea.nextBoolean();
+                                    personas.get(pos).setTieneescuadron(tiene);
+                                    break;
+                                }
+                                case 9:{
+                                    switch(tipo){
+                                        case 2:{
+                                            System.out.println("Ingrese la posicion del factor a modificar: ");
+                                            int posf=lea.nextInt();
+                                            System.out.println("Ingrese el nuevo factor: ");
+                                            lea.nextLine();
+                                            String factor=lea.nextLine();
+                                            ((Mutante)personas.get(pos)).getFactoresmutantes().set(posf, factor);
+                                            break;
+                                        }
+                                        case 3:{
+                                            System.out.println("1) Edad en la cual ocurrio el accidente");
+                                            System.out.println("2) Tipo de accidente");
+                                            System.out.println("Elija la opcion que desea: ");
+                                            int op=lea.nextInt();
+                                            if(op==1){
+                                                System.out.println("Ingrese la nueva edad cuando ocurrio el accidente");
+                                                int edad=lea.nextInt();
+                                                ((PorAccidenteRadioactivo)personas.get(pos)).setEdadaccidente(edad);
+                                            }else{
+                                                System.out.println("Ingrese el nuevo tipo de accidente");
+                                                String acc=lea.nextLine();
+                                                ((PorAccidenteRadioactivo)personas.get(pos)).setTipoaccidente(acc);
+                                            }
+                                            break;
+                                        }
+                                        case 4:{
+                                            System.out.println("1) Superpoder");
+                                            break;
+                                        }
+                                        case 5:{
+                                            System.out.println("1) Tiene creyentes");
+                                            System.out.println("2) Nombre de su religion/mitologia");
+                                            break;
+                                        }
+                                        case 6:{
+                                            System.out.println("1) Nombre del planeta");
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
                             break;
                         }
                         case 3:{
