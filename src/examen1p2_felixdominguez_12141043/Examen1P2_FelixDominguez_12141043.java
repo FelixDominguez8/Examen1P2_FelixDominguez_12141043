@@ -109,7 +109,7 @@ public class Examen1P2_FelixDominguez_12141043 {
                     System.out.println("1) Agregar persona");
                     System.out.println("2) Modificar persona");
                     System.out.println("3) Eliminar persona");
-                    System.out.println("4) Listar persona");
+                    System.out.println("4) Listar personas");
                     System.out.println("5) Salir");
                     System.out.println("Ingrese la opcion que desea: ");
                     int opcion2=lea.nextInt();
@@ -322,22 +322,41 @@ public class Examen1P2_FelixDominguez_12141043 {
                                                 ((PorAccidenteRadioactivo)personas.get(pos)).setEdadaccidente(edad);
                                             }else{
                                                 System.out.println("Ingrese el nuevo tipo de accidente");
+                                                lea.nextLine();
                                                 String acc=lea.nextLine();
                                                 ((PorAccidenteRadioactivo)personas.get(pos)).setTipoaccidente(acc);
                                             }
                                             break;
                                         }
                                         case 4:{
-                                            System.out.println("1) Superpoder");
+                                            System.out.println("Ingresa el nuevo superpoder");
+                                            lea.nextLine();
+                                            String superpoder=lea.nextLine();
+                                            ((Superhumano)personas.get(pos)).setSuperpoder(superpoder);
                                             break;
                                         }
                                         case 5:{
                                             System.out.println("1) Tiene creyentes");
                                             System.out.println("2) Nombre de su religion/mitologia");
+                                            System.out.println("Elija la opcion que desea: ");
+                                            int op=lea.nextInt();
+                                            if(op==1){
+                                                System.out.println("Ingrese si tiene creyentes o no");
+                                                boolean creyentes=lea.nextBoolean();
+                                                ((Deidad)personas.get(pos)).setCreyentes(creyentes);
+                                            }else{
+                                                System.out.println("Ingrese el nuevo nombre de la religion/mitologia");
+                                                lea.nextLine();
+                                                String re=lea.nextLine();
+                                                ((Deidad)personas.get(pos)).setReligion(re);
+                                            }
                                             break;
                                         }
                                         case 6:{
-                                            System.out.println("1) Nombre del planeta");
+                                            System.out.println("Ingrese el nuevo nombre del planeta");
+                                            lea.nextLine();
+                                            String planeta=lea.nextLine();
+                                            ((Alien)personas.get(pos)).setPlaneta(planeta);
                                             break;
                                         }
                                     }
@@ -346,9 +365,28 @@ public class Examen1P2_FelixDominguez_12141043 {
                             break;
                         }
                         case 3:{
+                            System.out.println("Ingrese la posicion de la persona a eliminar");
+                            int pos=lea.nextInt();
+                            personas.remove(pos);
+                            for(int i=0;i<heroes.size();i++){
+                                if(personas.get(pos)==heroes.get(pos)){
+                                    heroes.remove(i);
+                                }
+                            }
+                            for(int i=0;i<villanos.size();i++){
+                                if(personas.get(pos)==villanos.get(pos)){
+                                    villanos.remove(i);
+                                }
+                            }
                             break;
                         }
                         case 4:{
+                            for(int i=0; i<heroes.size();i++){
+                                System.out.println(heroes.get(i).getNombre()+" = "+heroes.get(i).getPoder());
+                            }
+                            for(int i=0; i<villanos.size();i++){
+                                System.out.println(villanos.get(i).getNombre()+" = "+villanos.get(i).getDebilidad());
+                            }
                             break;
                         }
                         case 5:{
